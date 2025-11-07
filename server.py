@@ -129,7 +129,7 @@ def set_assignment_structure(
     id_col: Optional[str] = None) -> Dict[str, Any]:
     """
     Reads an answer key Excel file, generates an extraction prompt,
-    and saves this template to Firestore, returning a unique ID.
+    and saves this template to DynamoDB, returning a unique ID.
     This template is used to process student submissions.
     """
     if not template_table:
@@ -201,6 +201,28 @@ def analyze_assignment_structure(template_id: str) -> Dict[str, Any]:
 # Tool: Upload Student Submission
 @mcp.tool()
 def upload_item_to_grade_key_file(template_id: str, file_path: str) -> Dict[str, Any]:
+    """
+    Uploads a student's assignment file and prepares it for grading against an existing
+    analyzed answer key template.
+
+    This function performs the following steps:
+      1. Retrieves the analyzed answer key (template) from the DynamoDB table
+         using the provided `template_id`.
+      2. Reads the student's submission file (Excel or Word) and constructs a
+         specific extraction prompt by injecting the student's data into the
+         base extraction prompt used for the answer key.
+      3. Saves a new record into the GradedAssignmentsTable, linking this
+         student submission to its corresponding template.
+      4. Returns a unique `student_assignment_id` that can be used by
+         downstream tools such as `analyze_item_to_grade_structure()` and
+         `grade_all_submissions()`.
+
+    The stored record includes:
+      - Template ID and user ID linkage
+      - File path and extracted prompt
+      - Status tracking ("Pending Extraction")
+      - Placeholder for grading and extracted data fields
+    """
     return _upload_item_to_grade_key_file(template_id, file_path)
 
 def _upload_item_to_grade_key_file(template_id: str, file_path: str) -> Dict[str, Any]:

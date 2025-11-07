@@ -70,4 +70,7 @@ Start Gemini:
 ```bash
 gemini
 ```
-[MCP Grader Screenshot](assets/mcp-screen1.png)
+
+<p align="center">
+  <img src="assets/mcp-screen1.png" alt="MCP Grader Screenshot" width="300">
+</p>
