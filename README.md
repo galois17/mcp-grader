@@ -81,3 +81,28 @@ gemini
 <p align="center">
   <img src="assets/mcp-screen1.png" alt="MCP Grader Screenshot" width="300">
 </p>
+
+
+
+
+Allow the execution of the MCP tool. Then run the following 3 queries in sequence:
+```bash
+> Analyze the answer key using the latest template id.
+```
+
+```bash
+> Now process all the student submissions in this folder: 
+~/tmp/student_submissions
+```
+
+```bash
+> Call the tool grade_all_submissions using the latest template ID.
+The last query should result in something like this. The Excel file produced will contain the report of the grades.
+```
+
+```bash
+✦ Grading is complete. The results have been saved to 
+~/tmp/grading_results_faa5d7bf-5fdd-4db7-8802-af1181daa16d.xlsx.
+```
+
+The report can be found in ~/tmp/grading_results_faa5d7bf-5fdd-4db7-8802-af1181daa16d.xlsx.
