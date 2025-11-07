@@ -15,5 +15,5 @@ cleanup.py
 .env
 .env.local
 
-
+.DS_Store
 

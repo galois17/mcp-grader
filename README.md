@@ -50,6 +50,13 @@ The tool will auto-create both tables if they do not exist.
 
 ## Connecting MCP Grader to Gemini CLI (As of Nov 1, 2025)
 
+Navigate to a directory different from the cloned repository. I will sue ~/tmp as an example. (Create it if it doesn't exist for you.)
+```bash
+cd ~/tmp
+cp /path/to/mcp-grader/assets/answer_key.xlsx .
+cp -a /path/to/mcp-grader/assets/student_submissions .
+```
+
 ```bash
 gemini mcp list
 #-> No MCP servers configured.
