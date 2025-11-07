@@ -85,7 +85,10 @@ gemini
 
 
 
-Allow the execution of the MCP tool. Then run the following 3 queries in sequence:
+Allow the execution of the MCP tool. Then run the following 4 queries in sequence:
+```bash
+> Upload the answer key ~/tmp/q_and_a_answer_key.xlsx with all parameters null.
+```
 ```bash
 > Analyze the answer key using the latest template id.
 ```
