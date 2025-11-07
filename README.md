@@ -106,3 +106,7 @@ The last query should result in something like this. The Excel file produced wil
 ```
 
 The report can be found in ~/tmp/grading_results_faa5d7bf-5fdd-4db7-8802-af1181daa16d.xlsx.
+
+<p align="center">
+  <img src="assets/report.png" alt="MCP Grader Screenshot" >
+</p>
